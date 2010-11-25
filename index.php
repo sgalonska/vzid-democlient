@@ -8,7 +8,7 @@
 ?>
 <html>
     <head>
-        <title>Callback</title>
+        <title>Index</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body>
@@ -19,7 +19,8 @@
     </body>
     <script type="text/javascript">
     function logResponse(c) {
-        if (c.error) { alert('error');
+        if (c.error) {
+            console.log(c);
             return;
         }
 

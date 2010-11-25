@@ -27,6 +27,24 @@
     <body>
        <?php if ($loggedInWithVzId): ?>
         <h1>Successuflly logged in with VZ-ID</h1>
+        <?php
+
+        $ch = curl_init();
+
+        // setze die URL und andere Optionen
+        curl_setopt($ch, CURLOPT_URL, $cookie['user_id'] . '?oauth_token=' . $cookie['access_token']);
+        curl_setopt($ch, CURLOPT_HTTPGET, true);
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+        // führe die Aktion aus und gebe die Daten an den Browser weiter
+        $ret = curl_exec($ch);
+
+        // schließe den cURL-Handle und gebe die Systemresourcen frei
+        curl_close($ch);
+        $userData = json_decode($ret, true);
+        var_dump($userData['entry']);
+        ?>
        <?php else: ?>
         <h1>Please register</h1>
        <?php endif ?>
