@@ -1,10 +1,10 @@
 <?php
-    $consumerKey = '0dc2fcd81d7ee4f63b0edc9b39c5b9185149a22b2bac6049';
-    $consumerSecret = 'w43HLgQmA9NpBka_nDjg48F4G5GbOuxvmemmBGPSYxwu0UJr';
+    $consumerKey = 'consumer key';
+    $consumerSecret = 'consumer secret';
     $cookieKey = 'vz_' . $consumerKey;
     $requiredFields = array('name', 'emails');
-    $redirectUrl = 'http://localhost:8062/vzid-democlient/callback.html';
-    $registrationUrl = 'http://localhost:8062/vzid-democlient/registration.php';
+    $redirectUrl = 'http://path/to/vzid-democlient/callback.html';
+    $registrationUrl = 'http://path/to/vzid-democlient/registration.php';
 ?>
 <html>
     <head>

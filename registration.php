@@ -43,7 +43,7 @@
         ?>
        <?php else: ?>
         <h1>Please register or log in</h1>
-        <!-- some user registration form handling here -->
+        <!--
        <?php endif ?>
     </body>
 </html>
