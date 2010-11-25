@@ -1,7 +1,8 @@
 <?php
-    $consumerKey = '0dc2fcd81d7ee4f63b0edc9b39c5b9185149a22b2bac6049';
-    $consumerSecret = 'w43HLgQmA9NpBka_nDjg48F4G5GbOuxvmemmBGPSYxwu0UJr';
+    $consumerKey = 'consumer key';
+    $consumerSecret = 'consumer secret';
     $cookieKey = 'vz_' . $consumerKey;
+
 
     if ($loggedInWithVzId = isset($_COOKIE[$cookieKey])) {
         // check if VZ-ID cookie exists and is valid
@@ -30,23 +31,19 @@
         <?php
 
         $ch = curl_init();
-
-        // setze die URL und andere Optionen
         curl_setopt($ch, CURLOPT_URL, $cookie['user_id'] . '?oauth_token=' . $cookie['access_token']);
         curl_setopt($ch, CURLOPT_HTTPGET, true);
         curl_setopt($ch, CURLOPT_HEADER, 0);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-
-        // führe die Aktion aus und gebe die Daten an den Browser weiter
         $ret = curl_exec($ch);
-
-        // schließe den cURL-Handle und gebe die Systemresourcen frei
         curl_close($ch);
+
         $userData = json_decode($ret, true);
         var_dump($userData['entry']);
         ?>
        <?php else: ?>
-        <h1>Please register</h1>
+        <h1>Please register or log in</h1>
+        <!-- some user registration form handling here -->
        <?php endif ?>
     </body>
 </html>
